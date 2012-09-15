@@ -73,7 +73,12 @@ endif
 colorscheme thegoodluck
 
 set history=1000
-set colorcolumn=+1
+
+try
+    set colorcolumn=+1
+catch /E518: Unknown option/
+    echo "WARNING: colorcolumn works only in Vim >= 7.3"
+endtry
 
 set guicursor=n-v-c:block-blinkon0-Cursor/lCursor
 set guicursor+=ve:ver35-Cursor
