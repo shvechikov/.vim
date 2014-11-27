@@ -88,17 +88,17 @@ filetype plugin indent on  " required for vundle!
 syntax on
 
 if has("gui_running")
+    colorscheme thegoodluck
     set guioptions-=m
     set guioptions-=T
-    "set guifont=Monaco:h15
-    set guifont=Monaco:h13
-    set linespace=3
+    "set guifont=Monaco:h13
+    set guifont=Source\ Code\ Pro:h14
+    set linespace=2
 elseif $TERM == 'xterm-256color'
     set t_Co=256
+    colorscheme desert256
 endif
 
-colorscheme thegoodluck
-"colorscheme desert256
 
 
 set history=1000
@@ -106,7 +106,8 @@ set history=1000
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/venv/*,*.pyc,*/staticfiles/*
 
 set ai
-set clipboard=unnamed
+"set clipboard=unnamed
+set linebreak
 
 try
     set numberwidth=5
@@ -131,7 +132,7 @@ set guicursor+=r-cr:hor20-Cursor/lCursor
 set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
 set shiftwidth=2
-set softtabstop=-1
+"set softtabstop=-1
 set tabstop=8
 set expandtab
 
@@ -152,9 +153,10 @@ set laststatus=2
 " Format the statusline
 let sl_flags='%h%m%r%y%w'
 let sl_left='%<%{HasPaste()}%f '
+let sl_git='%{fugitive#statusline()}'
 let sl_symbol="%{synIDattr(synID(line('.'),col('.'),0),'name')}  %b 0x%02B  "
 let sl_cursor_position = '[%l(%L) x %2c(%2v)] %3p%%'
-let &statusline = sl_left . sl_flags . '%=' . sl_symbol . sl_cursor_position
+let &statusline = sl_left . sl_flags . sl_git . '%=' . sl_symbol . sl_cursor_position
 
 function! HasPaste()
     if &paste
@@ -185,10 +187,17 @@ map <Right> <Esc>gt
 "imap <Left> <Esc>gT
 "imap <Right> <Esc>gt
 
-map <Up> 
-map <Down> 
+map <Up> k_
+map <Down> j_
+map <D-Left> <Esc>:tabmove -1<CR>
+map <D-Right> <Esc>:tabmove +1<CR>
+"map <Up> 
+"map <Down> 
 "imap <Up> 
 "imap <Down> 
+
+"Open the folder containing the currently open file
+map <Leader>f tabe %:p:h
 
 " ============================================================================
 "                           Plugins customization
@@ -199,7 +208,8 @@ let python_highlight_all = 1
 hi pythonSpaceError guibg=#ffdddd
 
 " netwr
-let g:netrw_fastbrowse=0  " don't cache dirs, always show actual content
+"let g:netrw_fastbrowse=0  " don't cache dirs, always show actual content
+let g:netrw_liststyle=3   " tree mode
 let g:netrw_mousemaps=0   " disable mouse in browsing
 let g:netrw_banner=0      " enable/suppress the banner
 let g:netrw_list_hide='\v\.(pyc|swp)$'  " hide some file types
@@ -214,8 +224,11 @@ noremap <Leader>v :BufExplorerVerticalSplit<CR>
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_switch_buffer = 'Et'
+"let g:ctrlp_switch_buffer = 'Et'
 noremap <Leader>m :CtrlPMixed<CR>
+
+"
+let g:Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 " jedi
 "let g:jedi#completions_command = "<C-J>"
