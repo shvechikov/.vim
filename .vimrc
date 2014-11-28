@@ -5,17 +5,17 @@
 " 1. install vim-gtk (CSApprox needs +gui)
 " 2. mkdir -p ~/.vim/bundle
 " 3. git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-" 4. :BundleInstall
+" 4. :PluginInstall
 " 5. Profit!
 "
 " Brief vundle help:
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" NOTE: comments after Plugin command are not allowed..
 " ============================================================================
 
 set nocompatible  " be improved (Vi IMproved!)
@@ -25,57 +25,57 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle (required for vundle!)
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'junegunn/goyo.vim'
-Bundle 'amix/vim-zenroom2'
+Plugin 'junegunn/goyo.vim'
+Plugin 'amix/vim-zenroom2'
 
 " colorschemes
-Bundle 'shvechikov/vim-colors-thegoodluck'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'vim-scripts/desert256.vim'
-Bundle 'candycode.vim'
+Plugin 'shvechikov/vim-colors-thegoodluck'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'vim-scripts/desert256.vim'
+Plugin 'candycode.vim'
 
-Bundle 'gregsexton/MatchTag'
-Bundle 'vim-indent-object'
-Bundle 'taglist.vim'
-Bundle 'utl.vim'
+Plugin 'gregsexton/MatchTag'
+Plugin 'vim-indent-object'
+Plugin 'taglist.vim'
+Plugin 'utl.vim'
 
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'rking/ag.vim'
-"Bundle 'suan/vim-instant-markdown'
-Bundle 'plasticboy/vim-markdown'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'rking/ag.vim'
+"Plugin 'suan/vim-instant-markdown'
+Plugin 'plasticboy/vim-markdown'
 
 " plugins
-"Bundle 'Align'
-Bundle 'CSApprox'
-Bundle 'kien/ctrlp.vim'
-Bundle 'jlanzarotta/bufexplorer'
-"Bundle 'bufexplorer.zip'
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'majutsushi/tagbar'
+"Plugin 'Align'
+Plugin 'CSApprox'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jlanzarotta/bufexplorer'
+"Plugin 'bufexplorer.zip'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'majutsushi/tagbar'
 
 " filetypes
-Bundle 'atourino/jinja.vim'
-Bundle 'othree/html5-syntax.vim'
-Bundle 'groenewege/vim-less'
-" Bundle 'kevinw/pyflakes-vim'
-" Bundle 'andviro/flake8-vim'
-" Bundle 'jpythonfold.vim'
-Bundle 'tmhedberg/SimpylFold'
-Bundle 'indentpython.vim'
-Bundle 'hdima/vim-scripts'
-Bundle 'nvie/vim-flake8'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'evanmiller/nginx-vim-syntax'
-Bundle 'vim-scripts/matchit.zip'
+Plugin 'atourino/jinja.vim'
+Plugin 'othree/html5-syntax.vim'
+Plugin 'groenewege/vim-less'
+" Plugin 'kevinw/pyflakes-vim'
+" Plugin 'andviro/flake8-vim'
+" Plugin 'jpythonfold.vim'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'indentpython.vim'
+Plugin 'hdima/vim-scripts'
+Plugin 'nvie/vim-flake8'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'vim-scripts/matchit.zip'
 
 
-Bundle 'ivanov/vim-ipython'
+Plugin 'ivanov/vim-ipython'
 
 
 filetype plugin indent on  " required for vundle!
