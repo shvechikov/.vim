@@ -21,12 +21,13 @@
 set nocompatible  " be improved (Vi IMproved!)
 filetype off      " required for vundle!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " let Vundle manage Vundle (required for vundle!)
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
+" Distraction-free editing
 Plugin 'junegunn/goyo.vim'
 Plugin 'amix/vim-zenroom2'
 
@@ -63,6 +64,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'atourino/jinja.vim'
 Plugin 'othree/html5-syntax.vim'
 Plugin 'groenewege/vim-less'
+
 " Plugin 'kevinw/pyflakes-vim'
 " Plugin 'andviro/flake8-vim'
 " Plugin 'jpythonfold.vim'
@@ -78,6 +80,7 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'ivanov/vim-ipython'
 
 
+call vundle#end()
 filetype plugin indent on  " required for vundle!
 
 
